@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <script>
+        document.write('<div class="inner">');
+        document.write('<table id="makeTable">');
+        document.write('<colgroup>');
+        document.write('   <col style="width:calc(100% / 7)"/>');
+        document.write('   <col style="width:calc(100% / 7)"/>');
+        document.write('   <col style="width:calc(100% / 7)"/>');
+        document.write('   <col style="width:calc(100% / 7)"/>');
+        document.write('   <col style="width:calc(100% / 7)"/>');
+        document.write('   <col style="width:calc(100% / 7)"/>');
+        document.write('   <col style="width:calc(100% / 7)"/>');
+        document.write('</colgroup>');
+        
+        document.write('<thead>');
+        document.write('   <tr>');
+        document.write('       <th>ID</th>');
+        document.write('       <th>NAME</th>');
+        document.write('       <th>AGE</th>');
+        document.write('       <th>ADDR</th>');
+        document.write('       <th>PHONE</th>');
+        document.write('       <th>JOB</th>');
+        document.write('       <th>SALARY</th>');
+        document.write('   </tr>');
+        document.write('</thead>');
+        
+        var arrThId = document.getElementsByTagName('th')
+        
+        document.write('<tbody>');
+            for( var i = 0; i < 6; i++ ) {
+                document.write('<tr class="line">');
+                if( i == 5 ) {
+                    document.write('<tr>');
+                }
+                for( var j = 0; j < 7; j++) {
+                   document.write('<td>' + arrThId[j].innerText + '</td>');
+                }
+                document.write('</tr>');
+            }
+        document.write('</tbody>');
+        document.write('</table>');
+        document.write('</div>');
+    </script>
+    
+    <style>
+        .inner {
+            position      : absolute;
+            width         : 700px;
+            height        : 500px;
+            border        : 1px solid gray;
+            border-radius : 30px;
+            transform     : translate(-50%, -50%);
+            left          : 50%;
+            top : 50%;
+            box-shadow    : 5px 5px 5px 5px gray;
+        }
+        .line {
+            border-bottom : 1px solid black;
+        }
+        table {
+            border-collapse : collapse;
+            border : 0;
+            width  : 100%;
+            height: 100%;
+        }
+        
+        thead {
+            height     : calc(100% / 7);
+        }
+        
+        tbody {
+            height     : calc(100% / 7 * 6);
+        }
+        
+        th {
+            background : pink;
+            height     : calc(100% / 6);
+        }
+        td {
+            text-align : center;
+            opacity    : 0.7;
+            height     : calc(100% / 6);
+           
+        }
+        
+        th:nth-child(1) {
+            border-top-left-radius  : 30px;
+        }
+        
+        th:nth-last-child(1) {
+            border-top-right-radius  : 30px;
+        }
+    </style>
+</head>
+<body>
+    <h3>2Week(자바스크립트 동적테이블 생성)</h3>
+</body>
+</html>
